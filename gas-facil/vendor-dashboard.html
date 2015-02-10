@@ -48,7 +48,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" id="logout" href="login.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -240,7 +240,7 @@
 		});
 	</script>
 	
-	<script type="application/javascript">
+	<script type="text/javascript">
 	Parse.initialize("rMJLW7qybdglATi4FowrRFwmVqZkLoxuo6vntg1c","cvrkyMx0c4X2oG8vI9OkvtjnAClum3K9HMTkCj4i");
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
@@ -261,8 +261,7 @@
         });
         
         $("#logout").click(function() {
-        	Parser.User.logout();
-        	Parse.User.logOut();
+            Parse.User.logOut();
         });
         
         function myNavFunction(id) {
