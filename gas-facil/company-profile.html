@@ -23,6 +23,7 @@
     
     <!-- Custom styles for this template -->
     <link href="css/style-dash.css" rel="stylesheet">
+     <link href="css/gasfacil-style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -104,8 +105,8 @@
                           <span>Perfil</span>
                       </a>
                       <ul class="sub">
-                          <li id="submenu-prof-visu"><a  href="profile.html">Visualizar</a></li>
-                          <li class="active" id="submenu-prof-edit"><a  href="edit-profile.html">Editar</a></li>
+                          <li  class="active" id="submenu-prof-visu"><a  href="company-profile.html">Empresa</a></li>
+                          <li id="submenu-prof-edit"><a  href="user-profile.html">Usuário fornecedor</a></li>
                       </ul>
                   </li>
                   <li>
@@ -170,7 +171,8 @@
 	<script type="text/javascript" src="js/logic/show-orders.js"></script>
 	<script type="text/javascript" src="js/logic/show-history.js"></script>
 	<script type="text/javascript" src="js/logic/saveProduct.js"></script>
-	<script type="text/javascript" src="js/logic/filterHistory.js"></script>
+	<script type="text/javascript" src="js/logic/filterHistory.js"></script> 
+	<script type="text/javascript" src="js/logic/show-company-profile.js"></script>
 	
 	<!-- Bootstrap Core JavaScript -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -191,8 +193,7 @@
             $("#date-popover").click(function (e) {
                 $(this).hide();
             });
-            getPhotos();
-            checkOrders();
+            getProfileInfo();
 			$("#content").show();
         });
                 
