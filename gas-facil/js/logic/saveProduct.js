@@ -12,7 +12,7 @@ $(document).ready(function(e){
             console.log("image: " + parseFile);
             newProduct.set("photo", parseFile);
             console.log("price: " + productPrice);
-            newProduct.set("price", productPrice);
+            newProduct.set("price_int", productPrice);
             newProduct.set("descricao", productDescription);
             console.log("type: " + productType);
             newProduct.set('thumbnailBlur', parseFile);
