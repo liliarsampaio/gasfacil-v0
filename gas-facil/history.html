@@ -53,7 +53,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a id="logout" class="logout" href="login.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -225,16 +225,26 @@
 	</script>
 	
 	<script type="application/javascript">
+        Parse.initialize("rMJLW7qybdglATi4FowrRFwmVqZkLoxuo6vntg1c","cvrkyMx0c4X2oG8vI9OkvtjnAClum3K9HMTkCj4i");
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
             $("#date-popover").click(function (e) {
                 $(this).hide();
             });
-            getHistory();
-            checkOrders();
-            $("#history-list").show();
-			$("#content").show();
+            var currentUser = Parse.User.current();
+            if (!currentUser) {
+                window.location = "login.html";
+            }else {
+                getHistory();
+                checkOrders();
+                $("#history-list").show();
+                $("#content").show();
+            }
+        });
+
+        $("#logout").click(function() {
+            Parse.User.logOut();
         });
         
         function myNavFunction(id) {
