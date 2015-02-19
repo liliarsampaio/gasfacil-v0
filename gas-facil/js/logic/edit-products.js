@@ -11,7 +11,7 @@ var getPhotos = function() {
 				if(object.get('emCirculacao')) {
 					product.push(object.get('photo').url());
 					product.push(object.get('type'));
-					product.push(object.get('price'));
+					product.push(object.get('price_int'));
 					product.push(object.id);
 					product.push(object.get('descricao'));
 
@@ -96,7 +96,7 @@ var getPhotos = function() {
 								error.style.padding = "0px";
 							}  
 							else {
-								object.set('price', new_price);
+								object.set('price_int', new_price);
 								object.set('descricao', new_desc);
 
 								if(fileUploadControl.files.length > 0 && checkFileType(fileUploadControl.files[0].type, fileUploadControl.files[0])) {
