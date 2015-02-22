@@ -12,7 +12,7 @@ $(document).ready(function(e){
             console.log("image: " + parseFile);
             newProduct.set("photo", parseFile);
             console.log("price: " + productPrice);
-            newProduct.set("price_int", productPrice);
+            newProduct.set("price_int", parseFloat(productPrice));
             newProduct.set("descricao", productDescription);
             console.log("type: " + productType);
             newProduct.set('thumbnailBlur', parseFile);
@@ -27,6 +27,7 @@ $(document).ready(function(e){
                 error: function (logic, error) {
                     // Execute any logic that should take place if the save fails.
                     // error is a Parse.Error with an error code and message.
+                    console.log(error);
                     $("#message").html("<span style='color:red' id='error_message' >Cadastro do produto falhou!</span>");
                 }
             });

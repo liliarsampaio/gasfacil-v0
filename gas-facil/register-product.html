@@ -132,6 +132,44 @@
       <section id="main-content">
           <section class="wrapper">
           		<div id="content" class="row main-row">
+                    <div id="register-list" class="thumbnail">
+                        <div class="white-header">
+                            <h5>Cadastrar Produto</h5>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tipo:</label>
+                            <select id="product-type-select" data-title="Por favor, selecione um tipo de produto."
+                                    name="type" class="form-control" data-require="">
+                                <option value="Escolher tipo" selected="selected" disabled="disabled">Escolher tipo</option>
+                                <option value="Água 500 ml">Água 500 ml</option>
+                                <option value="Água 20 litros">Água 20 litros</option>
+                                <option value="Gás">Gás</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Preço:</label>
+                            <input id="product-price-input" data-title="Por favor, insira apenas números" data-require=""
+                                   name="price" class="form-control" placeholder="Preço do produto" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Descrição:</label>
+                            <input id="product-description-input" data-title="Por favor, insira apenas números" data-require=""
+                                   name="description" class="form-control" placeholder="Descrição do produto" />
+                        </div>
+                        <!--<div class="alert alert-danger"></div>-->
+                        <label class="control-label">Escolher imagem:</label>
+                        <form id="uploadimage" action="" method="post" enctype="multipart/form-data" >
+                            <input name="image_file" id="product-image" type="file" />
+                            <!--<input class = "btn btn-primary" type="submit"  id="upload-btn" value="Upload" />-->
+                            <!--<img src="images/ajax-loader.gif" id="loading-img" style="display:none;" alt="Please Wait"/>-->
+                        </form>
+                        <div id="output"></div>
+                        <div id="image_preview"> <img id="previewing" src="images/placeholder.png" /></div>
+                        <div id="message" display="none"></div>
+                        <div class="form-group text-center">
+                            <button id="register-product-btn" class="btn btn-primary" type="submit" >Cadastrar</button>
+                        </div>
+                    </div>
           		
                 </div><!-- /row main -->
           </section>
@@ -201,8 +239,8 @@
             if (!currentUser) {
                 window.location = "login.html";
             }else {
-                getPhotos();
-                checkOrders();
+//                getPhotos();
+//                checkOrders();
                 $("#content").show();
             }
         });
