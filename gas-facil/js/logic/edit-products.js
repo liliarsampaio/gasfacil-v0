@@ -96,7 +96,7 @@ var getPhotos = function() {
 								error.style.padding = "0px";
 							}  
 							else {
-								object.set('price_int', new_price);
+								object.set('price_int', parseFloat(new_price));
 								object.set('descricao', new_desc);
 
 								if(fileUploadControl.files.length > 0 && checkFileType(fileUploadControl.files[0].type, fileUploadControl.files[0])) {
