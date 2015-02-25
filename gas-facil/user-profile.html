@@ -177,6 +177,7 @@
 	<script type="text/javascript" src="js/logic/show-history.js"></script>
 	<script type="text/javascript" src="js/logic/saveProduct.js"></script>
 	<script type="text/javascript" src="js/logic/filterHistory.js"></script>
+	<script type="text/javascript" src="js/logic/show-user-profile.js"></script>
 	
 	<!-- Bootstrap Core JavaScript -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -202,8 +203,7 @@
             if (!currentUser) {
                 window.location = "login.html";
             }else {
-                getPhotos();
-                checkOrders();
+            	getUserInfo()
                 $("#content").show();
             }
         });
