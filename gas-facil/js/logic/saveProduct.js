@@ -107,6 +107,24 @@ function imageIsLoaded(e) {
 function validateForm(fileUploadControl) {
     var file;
     var result = true;
+    if (productType == "") {
+        $("#message").html("<span style='color:red' id='error_message' >Selecione um tipo de produto!</span>");
+        $("#message").show();
+        result = false;
+        return result;
+    }
+    if (productPrice == "" || isNumber(productPrice) == false) {
+        $("#message").html("<span style='color:red' id='error_message' >Preço deve conter apenas números!</span>");
+        $("#message").show();
+        result = false;
+        return result;
+    }
+    if(productDescription == ""){
+        $("#message").html("<span style='color:red' id='error_message' >Informe a descrição do produto!</span>");
+        $("#message").show();
+        result = false;
+        return result;
+    }
     if (fileUploadControl.files.length > 0 && checkFileType(fileUploadControl.files[0].type, fileUploadControl.files[0])) {
         file = fileUploadControl.files[0];
         productImage = file;
@@ -114,21 +132,7 @@ function validateForm(fileUploadControl) {
         $("#message").html("<span style='color:red' id='error_message' >Escolha uma imagem!</span>");
         $("#message").show();
         result = false;
-    }
-    if (productPrice == "" || isNumber(productPrice) == false) {
-        $("#message").html("<span style='color:red' id='error_message' >Preço deve conter apenas números!</span>");
-        $("#message").show();
-        result = false;
-    }
-    if (productType == "") {
-        $("#message").html("<span style='color:red' id='error_message' >Selecione um tipo de produto!</span>");
-        $("#message").show();
-        result = false;
-    }
-    if(productDescription == ""){
-        $("#message").html("<span style='color:red' id='error_message' >Informe a descrição do produto!</span>");
-        $("#message").show();
-        result = false;
+        return result;
     }
 
     return result;
