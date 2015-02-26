@@ -42,6 +42,7 @@ var getUserInfo = function() {
 			var pwd_input = document.createElement('input');
 			pwd_input.setAttribute("class", "form-control");
 			pwd_input.setAttribute("id", "user-pwd");
+			pwd_input.setAttribute("type", "password");
 			
 			var div_error_msg = document.createElement('div');
 			div_error_msg.setAttribute("display", "hidden");
