@@ -11,7 +11,9 @@ var getPhotos = function() {
 				if(object.get('emCirculacao')) {
 					product.push(object.get('photo').url());
 					product.push(object.get('type'));
-					product.push(object.get('price_int'));
+					var price_str = object.get('price_int').toString();
+					price_str = price_str.replace(".", ",");
+					product.push(price_str);
 					product.push(object.id);
 					product.push(object.get('descricao'));
 

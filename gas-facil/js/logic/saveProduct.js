@@ -12,6 +12,7 @@ $(document).ready(function(e){
             console.log("image: " + parseFile);
             newProduct.set("photo", parseFile);
             console.log("price: " + productPrice);
+            productPrice = productPrice.replace(",",".");
             newProduct.set("price_int", parseFloat(productPrice));
             newProduct.set("descricao", productDescription);
             console.log("type: " + productType);
@@ -114,7 +115,7 @@ function validateForm(fileUploadControl) {
         return result;
     }
     if (productPrice == "" || isNumber(productPrice) == false) {
-        $("#message").html("<span style='color:red' id='error_message' >Preço deve conter apenas números!</span>");
+        $("#message").html("<span style='color:red' id='error_message' >Preço inválido.Exemplos válidos: 2 ou 2,00 ou 2,10</span>");
         $("#message").show();
         result = false;
         return result;
@@ -142,5 +143,5 @@ function validateForm(fileUploadControl) {
 
 function isNumber(value) {
 
-    return /^[+-]?\d+(\.\d+)?$/.test(value);
+    return /^[+-]?\d+(\,\d+)?$/.test(value);
 };
