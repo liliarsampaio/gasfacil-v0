@@ -65,10 +65,14 @@ $(document).ready(function(e){
                     var currentStatus = status;
                     var orderDate = object.createdAt;
                     var orderDay = orderDate.getDate();
+                    var orderMonth = orderDate.getMonth() + 1;
                     if(orderDay >= '1' && orderDay <= '9'){
                         orderDay = '0' + orderDay; // add zero to day if necessary
                     }
-                    var orderDateFormat = orderDay+"/"+(orderDate.getMonth()+1)+"/"+orderDate.getFullYear();
+                    if(orderMonth >= '1' && orderMonth <= '9'){
+                        orderMonth = '0' + orderMonth; // add zero to day if necessary
+                    }
+                    var orderDateFormat = orderDay+"/"+(orderMonth)+"/"+orderDate.getFullYear();
                     console.log("date format: " + orderDateFormat + " chosen date: " + chosenTextDate);
                     if(status != orderStatus.pending && status != "pendente" && (orderDateFormat == chosenTextDate)) {
                         var order = fillOrderArray(object, status);
@@ -78,6 +82,7 @@ $(document).ready(function(e){
 
                 if(orders.length == 0){
                     alertify.alert("Nenhum pedido efetuado na data " + chosenTextDate);
+                    console.log("date format: " + orderDateFormat);
                     return false;
                 }
 
