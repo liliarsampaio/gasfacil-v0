@@ -39,7 +39,7 @@ var addOptionToDropdownHistory = function(dropdownId, dropdown, optionName){
 };
 
 var clickOnHistory = function(){
-	document.getElementById("history-opt").click();
+	document.getElementById("menu-history").click();
 };
 
 var getHistory = function() {
@@ -95,8 +95,14 @@ var getHistory = function() {
 
 				};
 
-				items.splice(0,1);
-				items.forEach(function(item) {
+				//items.splice(0,1);
+				//items.forEach(function(item) {
+				var temp_items = [];
+				for(var i=0; i < items.length; i++){
+					temp_items.push(items[i]);
+				}
+				temp_items.splice(0,1);
+				temp_items.forEach(function(item) {
 					var cell = document.createElement("td");
 					cell.textContent = item;
 
