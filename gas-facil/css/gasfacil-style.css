@@ -27,6 +27,13 @@
   border-color: #4682B4;
 }
 
+.btn-history {
+  height: 20pt;
+  color: #4682B4;
+  background-color: transparent;
+  border-color: transparent;
+}
+
 .btn-theme:hover,
 .btn-theme:focus,
 .btn-theme:active,
@@ -36,6 +43,16 @@
   background-color: #084B8A;
   border-color: #084B8A;
 }
+
+/* .btn-history:hover,
+.btn-history:focus,
+.btn-history:active,
+.btn-history.active,
+.open .dropdown-toggle.btn-history {
+  color: #fff;
+  background-color: #084B8A;
+  border-color: #084B8A;
+} */
 
 .btn-login {
 	color: #fff;
@@ -97,6 +114,7 @@
 
 .form-control {
 	margin-bottom: 10px;
+	color: #fff;
 }
 
 .thumbnail img { 

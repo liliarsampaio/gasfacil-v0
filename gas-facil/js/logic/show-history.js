@@ -7,7 +7,7 @@ var productDescription = "";
 
 var createDropdownMenuHistory = function(dropdownId){
 	var dd_process_order = document.createElement('select');
-	dd_process_order.setAttribute('class','btn btn-primary');
+	dd_process_order.setAttribute('class','btn btn-history');
 	dd_process_order.setAttribute('id', dropdownId);
 	var id = dd_process_order.id;
 	addOptionToDropdownHistory(id,dd_process_order, "Alterar status");
