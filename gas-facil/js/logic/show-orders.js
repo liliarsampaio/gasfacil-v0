@@ -39,7 +39,7 @@ var getOrders = function() {
 					cell.textContent = item;
 					
 					bt_process_order.setAttribute('type','button');
-					bt_process_order.setAttribute('class','btn btn-theme');
+					bt_process_order.setAttribute('class','btn btn-history');
 					bt_process_order.setAttribute('value','Processar');
 
 					bt_process_order.onclick = function() {
