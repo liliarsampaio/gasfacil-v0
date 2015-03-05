@@ -112,9 +112,24 @@
 	margin-top: 15px;
 }
 
-.form-control {
+#calendar {
 	margin-bottom: 10px;
-	color: #fff;
+	color: #000000;
+}
+
+#calendar2 {
+	margin-bottom: 10px;
+	color: #000000;
+}
+
+#login-username{
+	margin-bottom: 10px;
+	color: #000000;
+}
+
+#login-password{
+	margin-bottom: 10px;
+	color: #000000;
 }
 
 .thumbnail img { 

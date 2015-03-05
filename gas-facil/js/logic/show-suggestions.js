@@ -17,8 +17,10 @@ function fillSuggestionsArray(object) {
 
     var userName = object.get("usuario").get("nome");
     var suggestion = object.get("sugestao");
+    var type = object.get("tipo");
     suggests.push(userName);
     suggests.push(suggestion);
+    suggests.push(type);
 
     return suggests;
 }
