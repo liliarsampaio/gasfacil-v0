@@ -29,8 +29,12 @@ function fillOrderArray(object, status) {
 	order.push(product.get('type'));
 
 	order.push(object.get('quantidade'));
-	order.push(object.get('price'));
-	order.push(object.get('troco'));
+	var price_str = parseFloat(object.get('price')).toFixed(2).toString();
+	price_str = price_str.replace(".", ",");
+	order.push(price_str);
+	var troco_str =  parseFloat(object.get('troco')).toFixed(2).toString();
+	troco_str = troco_str.replace(".", ",");
+	order.push(troco_str);
 
 	return order;
 }
