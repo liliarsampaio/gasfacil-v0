@@ -117,7 +117,7 @@
             Parse.User.logIn(username, password, {
                 success: function(user) {
                 	if (user.get('fornecedor') == true) {
-	                    window.location = "vendor-dashboard.html";
+	                    window.location = "view-products.html";
                     } else {
                     	$("#login-error-label").hide();
                         $("#login-error-label").css('color','red');

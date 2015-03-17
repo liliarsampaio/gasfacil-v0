@@ -198,12 +198,13 @@ function isValidNumber(value) {
 	return /^[+-]?\d+(\,\d+)?$/.test(value);
 };
 
+
 function checkFileType(imagefile, file){
 	var match= ["image/jpeg","image/png","image/jpg"];
 	var match= ["image/jpeg","image/png","image/jpg"];
 	if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
 	{
-		$('#previewing').attr('src','images/placeholder.png');
+
 		$("#message").html("<span style='color:red' id='error_message' >Apenas imagens jpeg, jpg e png são " +
 		"permitidas</span>");
 		$("#message").show();
@@ -212,7 +213,6 @@ function checkFileType(imagefile, file){
 	else
 	{
 		var reader = new FileReader();
-		reader.onload = imageIsLoaded;
 		reader.readAsDataURL(file);
 		return true;
 	}
