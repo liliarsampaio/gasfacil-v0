@@ -11,7 +11,7 @@ var getPhotos = function() {
 				if(object.get('emCirculacao')) {
 					product.push(object.get('photo').url());
 					product.push(object.get('type'));
-					var price_str = object.get('price_int').toString();
+					var price_str = object.get('price_int').toFixed(2).toString();
 					price_str = price_str.replace(".", ",");
 					product.push(price_str);
 					product.push(object.id);
@@ -81,12 +81,13 @@ var getPhotos = function() {
 					query.first({
 						success: function(object) {
 							var new_price = document.getElementById("price-"+items[3]+"-prod").value;
+							console.log("new price: " + new_price);
 							var new_desc = document.getElementById("desc-"+items[3]+"-prod").value;
 							var fileUploadControl = $("#image-"+items[3]+"-thumb")[0];
 
-							if (new_price == "" || isNumber(new_price) == false) {
+							if (new_price == "" || isValidNumber(new_price) == false) {
 								var error = document.getElementById("error-"+items[3]+"-msg");
-								error.textContent = "Preço deve conter apenas números.";
+								error.textContent = "Preço inválido. Exemplos válidos: 2 ou 2,00 ou 2,10.";
 								error.style.padding = "0px";
 							} else if (new_desc == "") {
 								var error = document.getElementById("error-"+items[3]+"-msg");
@@ -98,6 +99,7 @@ var getPhotos = function() {
 								error.style.padding = "0px";
 							}  
 							else {
+								new_price = new_price.replace(",",".");
 								object.set('price_int', parseFloat(new_price));
 								object.set('descricao', new_desc);
 
@@ -191,3 +193,28 @@ var deleteOldProducts = function(){
 		row_prod.removeChild(row_prod.firstChild);
 	}
 };
+
+function isValidNumber(value) {
+	return /^[+-]?\d+(\,\d+)?$/.test(value);
+};
+
+function checkFileType(imagefile, file){
+	var match= ["image/jpeg","image/png","image/jpg"];
+	var match= ["image/jpeg","image/png","image/jpg"];
+	if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
+	{
+		$('#previewing').attr('src','images/placeholder.png');
+		$("#message").html("<span style='color:red' id='error_message' >Apenas imagens jpeg, jpg e png são " +
+		"permitidas</span>");
+		$("#message").show();
+		return false;
+	}
+	else
+	{
+		var reader = new FileReader();
+		reader.onload = imageIsLoaded;
+		reader.readAsDataURL(file);
+		return true;
+	}
+};
+

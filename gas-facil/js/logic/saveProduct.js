@@ -165,7 +165,7 @@ function validateForm(fileUploadControl) {
         result = false;
         return result;
     }
-    if (productPrice == "" || isNumber(productPrice) == false) {
+    if (productPrice == "" || isValidNumber(productPrice) == false) {
         $("#message").html("<span style='color:red' id='error_message' >Preço inválido. Exemplos válidos: 2 ou 2,00 ou 2,10</span>");
         $("#message").show();
         result = false;
@@ -189,6 +189,6 @@ function validateForm(fileUploadControl) {
     return result;
 };
 
-function isNumber(value) {
+function isValidNumber(value) {
     return /^[+-]?\d+(\,\d+)?$/.test(value);
 };

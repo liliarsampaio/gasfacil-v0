@@ -122,6 +122,10 @@
 	color: #000000;
 }
 
+#history-container{
+	margin-top: 100px;
+}
+
 #login-username{
 	margin-bottom: 10px;
 	color: #000000;

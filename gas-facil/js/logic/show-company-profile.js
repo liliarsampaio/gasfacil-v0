@@ -81,7 +81,7 @@ var getProfileInfo = function() {
 							var error = document.getElementById("error-msg");
 							error.textContent = "Insira um endereço para sua empresa.";
 							error.style.padding = "0px";
-						} else if (new_telephone == "" || isNumber(new_telephone) == false) {
+						} else if (new_telephone == "" || isValidNumber(new_telephone) == false) {
 							var error = document.getElementById("error-msg");
 							error.textContent = "Insira um telefone para sua empresa apenas com números";
 							error.style.padding = "0px";
