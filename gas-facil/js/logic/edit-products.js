@@ -128,7 +128,7 @@ var getPhotos = function() {
 							}
 						},
 						error: function(error) {
-							alert("Error: " + error.code + " " + error.message);
+							console.log("Error: " + error.code + " " + error.message);
 						}
 					});
 				};
@@ -158,7 +158,7 @@ var getPhotos = function() {
 							}, 2000);
 						},
 						error: function(error) {
-							alert("Error: " + error.code + " " + error.message);
+							console.log("Error: " + error.code + " " + error.message);
 						}
 					});
 				};
@@ -182,7 +182,7 @@ var getPhotos = function() {
 
 		},
 		error : function(error) {
-			alert("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 		}
 	});
 };

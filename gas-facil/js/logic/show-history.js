@@ -89,7 +89,7 @@ var getHistory = function() {
 							clickOnHistory();
 						},
 						error: function(error) {
-							alert("Error: " + error.code + " " + error.message);
+							console.log("Error: " + error.code + " " + error.message);
 						}
 					});
 
@@ -118,7 +118,7 @@ var getHistory = function() {
 			});
 		},
 		error : function(error) {
-			alert("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 		}
 	});
 };

@@ -107,7 +107,7 @@ var getProfileInfo = function() {
 						}
 					},
 					error: function(error) {
-						alert("Error: " + error.code + " " + error.message);
+						console.log("Error: " + error.code + " " + error.message);
 					}
 				});
 			};
@@ -125,7 +125,7 @@ var getProfileInfo = function() {
 			row_prod.appendChild(div_panel_body);
 		},
 		error : function(error) {
-			alert("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 		}
 	});
 };

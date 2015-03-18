@@ -58,7 +58,7 @@ var getOrders = function() {
 								clickOnOrders();
 							},
 							error: function(error) {
-								alert("Error: " + error.code + " " + error.message);
+								console.log("Error: " + error.code + " " + error.message);
 							}
 						});
 					};
@@ -74,7 +74,7 @@ var getOrders = function() {
 			});
 		},
 		error : function(error) {
-			alert("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 		}
 	});
 };
