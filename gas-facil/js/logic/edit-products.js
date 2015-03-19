@@ -2,6 +2,7 @@ var getPhotos = function() {
 	Parse.initialize("rMJLW7qybdglATi4FowrRFwmVqZkLoxuo6vntg1c", "cvrkyMx0c4X2oG8vI9OkvtjnAClum3K9HMTkCj4i");
 	var productsImages = Parse.Object.extend("Produto");
 	var query = new Parse.Query(productsImages);
+	query.addDescending("createdAt");
 	query.find({
 		success : function(results) {
 			products = [];
