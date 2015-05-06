@@ -178,8 +178,9 @@
 <script type="text/javascript" src="js/common-scripts.js"></script>
 
 <!--personalized scripts-->
-<script type="text/javascript" src="js/logic/show-suggestions.js"></script>
 <script type="text/javascript" src="js/logic/orderNotification.js"></script>
+<script type="text/javascript" src="js/logic/show-suggestions.js"></script>
+
 
 
 <!-- Bootstrap Core JavaScript -->
@@ -206,7 +207,7 @@
             window.location = "login.html";
         }else {
             getSuggestions();
-//        checkOrders();
+            checkOrders();
             $("#suggestions-list").show();
             $("#content").show();
         }

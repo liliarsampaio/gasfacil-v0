@@ -66,11 +66,29 @@ var getPhotos = function() {
 				var photo_input = document.createElement('input');
 				photo_input.setAttribute("type", "file");
 				photo_input.setAttribute("id", "image-"+items[3]+"-thumb");
+				photo_input.style.display = "none";
+
+				var choose_photo_bt = document.createElement('input');
+				choose_photo_bt.setAttribute("type", "button");
+				choose_photo_bt.setAttribute("value","Choose File");
+				choose_photo_bt.setAttribute("id","choose-photo");
+				choose_photo_bt.style.marginLeft = "10px";
+
+				choose_photo_bt.onclick = function(){
+					document.getElementById("image-" + items[3]+ "-thumb").click();
+					var msg = document.getElementById("error-" + items[3] + "-msg");
+					msg.textContent = "Arquivo selecionado.";
+					msg.style.padding = "0px";
+					msg.style.color = "black";
+
+				};
+
 
 				var div_error_msg = document.createElement('div');
 				div_error_msg.setAttribute("display", "hidden");
 				div_error_msg.setAttribute("class", "error-form");
 				div_error_msg.setAttribute("id", "error-"+items[3]+"-msg");
+
 
 				var btn_edit = document.createElement('input');
 				btn_edit.setAttribute("type", "button");
@@ -88,17 +106,20 @@ var getPhotos = function() {
 
 							if (new_price == "" || isValidNumber(new_price) == false) {
 								var error = document.getElementById("error-"+items[3]+"-msg");
-								error.textContent = "Preço inválido. Exemplos válidos: 2 ou 2,00 ou 2,10.";
+								error.textContent = "Formato de preço válido: 2 ou 2,50.";
 								error.style.padding = "0px";
+								error.style.color = "#FF0000";
 							} else if (new_desc == "") {
 								var error = document.getElementById("error-"+items[3]+"-msg");
-								error.textContent = "Entre com uma descrição para o produto.";
+								error.textContent = "Informar descrição do produto.";
 								error.style.padding = "0px";
+								error.style.color = "#FF0000";
 							} else if (fileUploadControl.files.length > 0 && !(checkFileType(fileUploadControl.files[0].type, fileUploadControl.files[0]))){
 								var error = document.getElementById("error-"+items[3]+"-msg");
-								error.textContent = "Apenas imagens jpeg, jpg e png são permitidas.";
+								error.textContent = "Formatos válidos: jpeg ou png.";
 								error.style.padding = "0px";
-							}  
+								error.style.color = "#FF0000";
+							}
 							else {
 								new_price = new_price.replace(",",".");
 								object.set('price_int', parseFloat(new_price));
@@ -171,6 +192,7 @@ var getPhotos = function() {
 				div_caption.appendChild(desc_input);
 				div_caption.appendChild(title_photo);
 				div_caption.appendChild(photo_input);
+				div_caption.appendChild(choose_photo_bt);
 				div_caption.appendChild(div_error_msg);
 				div_caption.appendChild(btn_edit);
 				div_caption.appendChild(btn_remove);

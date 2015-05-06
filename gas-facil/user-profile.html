@@ -195,7 +195,8 @@
             if (!currentUser) {
                 window.location = "login.html";
             }else {
-            	getUserInfo()
+            	getUserInfo();
+                checkOrders();
                 $("#content").show();
             }
         });
