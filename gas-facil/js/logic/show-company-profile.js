@@ -129,3 +129,7 @@ var getProfileInfo = function() {
 		}
 	});
 };
+
+function isValidNumber(value) {
+	return /^[+-]?\d+(\,\d+)?$/.test(value);
+};
